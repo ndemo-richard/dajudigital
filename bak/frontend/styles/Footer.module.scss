@@ -1,0 +1,37 @@
+
+// components/Footer.scss
+
+@import "../theme/theme";
+
+.Footer {
+ 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 18px;
+  width: fit-content;
+
+  padding: 0 20px;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 30rem;
+
+  font-family: $logo-font;
+  font-size: 12px;
+  font-weight: bold;
+  color: $on-secondary;
+  text-transform: uppercase;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+@media screen and (max-width:768px){
+  .Footer{
+    display:block;
+    margin:auto;
+    color: rebeccapurple;
+  }
+}

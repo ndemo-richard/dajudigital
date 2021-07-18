@@ -1,0 +1,87 @@
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+import ReactPlayer from 'react-player';
+
+import { getAllPostsWithSlug, getPost } from '../../lib/api';
+import styles from '../../styles/Blog.module.scss';
+import Layout from '../../components/Layout';
+
+export default function Post({ postData }){
+ const router = useRouter();
+
+ if(!router.isFallBack && !postData?.slug){
+ return <p> this is an error</p>;
+ }
+ const formatDate = date => {
+ const newDate = new Date(date);
+ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+ return `${monthNames[newDate.getMonth()]
+ } ${newDate.getDate()}, ${newDate.getFullYear()}`;
+ };
+
+ return (
+	 <Layout>
+	 <div className={styles.container}>
+ <div className={styles.main}>
+ <Head>
+ <title>{postData.title}</title>
+ </Head>
+ <main>
+ {router.isFallback ? (
+ <h2>Loading ..</h2>
+ ) : (
+ <article >
+ <div >
+	 <div className={styles.title}>
+ <h1>{postData.title}</h1>
+		 </div>
+ <p>posted on &nbsp; {formatDate(postData.date)}</p>
+
+	 <div className={styles.video}>
+	 <ReactPlayer
+	 width="100%"
+	 height="100%"
+	 url={postData.extraPostInfo.videos.mediaItemUrl}
+	 controls
+	 />
+	 </div>
+	 <div className={styles.content}>
+<p>{postData.content}</p>
+	 </div>
+ </div>
+
+ </article>
+ )}
+ <p className={styles.linkBack}>
+ <Link href='/'><a>back to articles</a></Link>
+</p>
+</main>
+</div>
+	 </div>
+	 </Layout>
+);
+}
+
+
+export async function getStaticPaths(){
+  const allPosts = await getAllPostsWithSlug();
+
+  return {
+  paths: allPosts.edges.map(({ node }) => `/article/${node.slug}`) || [],
+  fallback:true
+  };
+  }
+
+export async function getStaticProps({ params}){
+const data = await getPost(params.slug);
+
+return {
+props: {
+   postData:data.post
+   }
+};
+}
