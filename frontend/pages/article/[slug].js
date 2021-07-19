@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import ReactPlayer from 'react-player';
-
+import Image from 'next/image';
 import { getAllPostsWithSlug, getPost } from '../../lib/api';
 import styles from '../../styles/Blog.module.scss';
 import Layout from '../../components/Layout';
@@ -36,6 +36,13 @@ export default function Post({ postData }){
  ) : (
  <article >
  <div >
+	 <div className={styles.Image}>
+	 <Image
+	 src={postData.extraPostInfo.previewImage.mediaItemUrl}
+	 alt="avater"
+	 layout="fill"
+	 />
+	 </div>
 	 <div className={styles.title}>
  <h1>{postData.title}</h1>
 		 </div>
