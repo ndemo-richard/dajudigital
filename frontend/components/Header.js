@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "../styles/Header.module.scss";
 
 const Header = props => (
-	<Link href="/">
+	<Link href="/" passHref>
 	<div></div>
 	</Link>
 

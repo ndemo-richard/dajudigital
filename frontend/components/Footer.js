@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "../styles/Footer.module.scss";
 
 const Footer = props => (
-  <Link href="/">
+  <Link href="/" passHref>
     <div className={styles.Footer}>copyright @ 2021</div>
   </Link>
 );

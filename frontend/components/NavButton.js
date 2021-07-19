@@ -4,7 +4,7 @@ import { withRouter } from "next/router";
 import styles from"../styles/NavButton.module.scss";
 
 const NavButton = props => (
-  <Link href={props.path}>
+  <Link href={props.path} passRef>
     <div
       className={`styles.NavButton ${
         props.router.pathname === props.path ? "active" : ""
