@@ -56,9 +56,9 @@ export default function Post({ postData }){
 	 controls
 	 />
 	 </div>
-	 <div className={styles.content}>
-<p>{postData.content}</p>
-	 </div>
+	 <div className={styles.content}
+            dangerouslySetInnerHTML={{ __html: postData.content}}
+	 />
  </div>
 
  </article>
