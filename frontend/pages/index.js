@@ -50,14 +50,14 @@ const Index = ({allPosts, singlePost }) =>(
 			</div>
 			<div className={styles.sidebar}>
 	<div className={styles.about}>
-         <h4>DajuDigital News:</h4>
+         <h4 className={styles.about_title}><span className={styles.circle}></span>DajuDigital News:</h4>
 	<p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 	<p>Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing eli.</p>
 	</div>
 
 	<div className={styles.trending}>
-         <h4>Trending Now</h4>
+         <h4 className={styles.trending_title}>Trending Now</h4>
 	</div>
 	</div>
 		</div>
