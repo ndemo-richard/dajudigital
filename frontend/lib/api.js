@@ -71,7 +71,7 @@ export async function getSinglePost(preview) {
     const data = await fetchAPI(
       `
       query singlePost {
-        posts(first : 1, where: { orderby: { field: DATE, order: DESC}}) {
+        posts(first : 3, where: { orderby: { field: DATE, order: DESC}}) {
 	edges {
       node {
         id
