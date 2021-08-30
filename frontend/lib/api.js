@@ -50,6 +50,7 @@ export async function getAllPosts(preview) {
           previewImage {
             mediaItemUrl
           }
+          summary
         }
         date
         author {
@@ -85,6 +86,7 @@ export async function getSinglePost(preview) {
           previewImage {
             mediaItemUrl
           }
+          summary
         }
         date
         author {
@@ -134,6 +136,7 @@ export async function getSinglePost(preview) {
           previewImage {
             mediaItemUrl
           }
+          summary
           }
       }
       query PostBySlug($id: ID!, $idType: PostIdType!) {
@@ -153,3 +156,189 @@ export async function getSinglePost(preview) {
 
     return data;
   }
+
+  //customized queries for practice
+//Latest
+export async function getlatestNews(preview) {
+  const data = await fetchAPI(
+    `
+    query latestNews {
+      posts(first : 1, where: { orderby: { field: DATE, order: DESC},}) {
+news:	edges {
+    node {
+      id
+date
+title
+slug
+      extraPostInfo {
+        videos {
+          mediaItemUrl
+        }
+        previewImage {
+          mediaItemUrl
+        }
+        summary
+      }
+      date
+      author {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+    }
+    `
+  );
+
+  return data?.posts;
+}
+//lifestyle
+export async function getlifestyle(preview) {
+  const data = await fetchAPI(
+    `
+    query lifestyles {
+      posts(first : 1, where: { orderby: { field: DATE, order: DESC},categoryName: "lifestyle"}) {
+life :	edges {
+    node {
+      id
+date
+title
+slug
+      extraPostInfo {
+        videos {
+          mediaItemUrl
+        }
+        previewImage {
+          mediaItemUrl
+        }
+        summary
+      }
+      date
+      author {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+    }
+    `
+  );
+
+  return data?.posts;
+}
+
+  //politics
+  export async function getpolitics(preview) {
+    const data = await fetchAPI(
+      `
+      query politics {
+        posts(first : 1, where: { orderby: { field: DATE, order: DESC},categoryName: "politics"}) {
+politic:	edges {
+      node {
+        id
+	date
+	title
+	slug
+        extraPostInfo {
+          videos {
+            mediaItemUrl
+          }
+          previewImage {
+            mediaItemUrl
+          }
+          summary
+        }
+        date
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+	}
+      }
+      `
+    );
+
+    return data?.posts;
+  }
+  
+  ///sports
+  export async function getsports(preview) {
+    const data = await fetchAPI(
+      `
+      query sports {
+        posts(first : 1, where: { orderby: { field: DATE, order: DESC},categoryName: "sports"}) {
+	sport:edges {
+      node {
+        id
+	date
+	title
+	slug
+        extraPostInfo {
+          videos {
+            mediaItemUrl
+          }
+          previewImage {
+            mediaItemUrl
+          }
+          summary
+        }
+        date
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+	}
+      }
+      `
+    );
+
+    return data?.posts;
+  }
+  
+  //financial
+  export async function getfinancial(preview) {
+    const data = await fetchAPI(
+      `
+      query financial {
+        posts(first : 1, where: { orderby: { field: DATE, order: DESC},categoryName: "financial"}) {
+	financials: edges {
+      node {
+        id
+	date
+	title
+	slug
+        extraPostInfo {
+          videos {
+            mediaItemUrl
+          }
+          previewImage {
+            mediaItemUrl
+          }
+          summary
+        }
+        date
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+	}
+      }
+      `
+    );
+
+    return data?.posts;
+  }
+  

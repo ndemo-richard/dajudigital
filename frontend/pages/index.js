@@ -8,12 +8,12 @@ import Link from "next/link";
 import Router from 'next/router';
 import styles from '../styles/index.module.scss';
 //data
-import { getAllPosts } from '../lib/api';
+import { getAllPosts, getfinancial, getpolitics, getsports,getlatestNews,getlifestyle } from '../lib/api';
 import { getSinglePost } from '../lib/api';
 import Layout from "../components/Layout";
 
 
-const Index = ({allPosts, singlePost }) =>(
+const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifestyle}) =>(
 
 	<Layout>
 		<div className={styles.wrapper}>
@@ -23,13 +23,170 @@ const Index = ({allPosts, singlePost }) =>(
 					<div className={styles.promo_module_content}>
 					<div className={styles.media_promo_list} >
 						<div className={styles.media_col1}>
-						<div className={styles.media_promo_headline}></div>
+
+							{latestNews.news.map(({node }) =>(
+
+                              <div className={styles.media_promo_headline} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+                                <div className={`${styles["media"]}${styles["block_link"]}`}>
+										<div className={styles.media_image_promo}>
+											<div className={styles.responsive_image}>
+											<Image
+												src={node.extraPostInfo.previewImage.mediaItemUrl}
+												alt="avater"
+												layout="fill"
+												/>
+
+											</div>
+										
+										</div>
+										<div className={styles.media_content_promo}>
+												<h3 className={styles.media_title_promo}>
+													<a className={styles.media_link_promo}>{node.title}</a>
+												</h3>
+												<p className={styles.media_summary_promo}>{node.extraPostInfo.summary}</p>
+                                                
+												<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>News</a>
+       						 </Link>
+							</h2>
+											</div>
+
+											
+			
+									</div>
+							  </div>
+							))}
+						
 						</div>
 						<div className={styles.media_col2}>
-						<div className={styles.media_promo_politics}></div>
-						<div className={styles.media_promo_business}></div>
-						<div className={styles.media_promo_sports}></div>
-						<div className={styles.media_promo_technology}></div>
+						{politics.politic.map(({node }) => (
+
+								<div className={styles.media_promo_politics} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+									<div className={`${styles["media"]}${styles["block_link"]}`}>
+										<div className={styles.media_image_col2}>
+											<div className={styles.responsive_image}>
+											<Image
+												src={node.extraPostInfo.previewImage.mediaItemUrl}
+												alt="avater"
+												layout="fill"
+												/>
+
+											</div>
+										
+										</div>
+										<div className={styles.media_content_col2}>
+												<h3 className={styles.media_title_col2}>
+													<a className={styles.media_link_promo}>{node.title}</a>
+												</h3>
+												 
+												<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>Politics</a>
+       						 </Link>
+							</h2>
+
+											</div>
+			
+									</div>
+								</div>
+						))}
+						{sports.sport.map(({node }) => (
+
+<div className={styles.media_promo_technology} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+	<div className={`${styles["media"]}${styles["block_link"]}`}>
+		<div className={styles.media_image_col2}>
+			<div className={styles.responsive_image}>
+			<Image
+				src={node.extraPostInfo.previewImage.mediaItemUrl}
+				alt="avater"
+				layout="fill"
+				/>
+
+			</div>
+			
+		
+		</div>
+		<div className={styles.media_content_col2}>
+												<h3 className={styles.media_title_col2}>
+													<a className={styles.media_link_promo}>{node.title}</a>
+												</h3>
+												 
+												<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>Sports</a>
+       						 </Link>
+							</h2>
+
+											</div>
+
+	</div>
+</div>
+))}
+{financial.financials.map(({node }) => (
+
+<div className={styles.media_promo_business} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+	<div className={`${styles["media"]}${styles["block_link"]}`}>
+		<div className={styles.media_image_col2}>
+			<div className={styles.responsive_image}>
+			<Image
+				src={node.extraPostInfo.previewImage.mediaItemUrl}
+				alt="avater"
+				layout="fill"
+				/>
+
+			</div>
+		
+		</div>
+		<div className={styles.media_content_col2}>
+												<h3 className={styles.media_title_col2}>
+													<a className={styles.media_link_promo}>{node.title}</a>
+												</h3>
+												 
+												<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>technology</a>
+       						 </Link>
+							</h2>
+
+											</div>
+
+	</div>
+</div>
+))}
+{lifestyle.life.map(({node }) => (
+
+<div className={styles.media_promo_sports} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+	<div className={`${styles["media"]}${styles["block_link"]}`}>
+		<div className={styles.media_image_col2}>
+			<div className={styles.responsive_image}>
+			<Image
+				src={node.extraPostInfo.previewImage.mediaItemUrl}
+				alt="avater"
+				layout="fill"
+				/>
+
+			</div>
+		
+		</div>
+		<div className={styles.media_content_col2}>
+												<h3 className={styles.media_title_col2}>
+													<a className={styles.media_link_promo}>{node.title}</a>
+												</h3>
+												
+                                                
+												<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>News</a>
+       						 </Link>
+							</h2>
+											</div>
+
+	</div>
+</div>
+))}
+					
+						
 						</div>
 
 
@@ -70,8 +227,13 @@ const Index = ({allPosts, singlePost }) =>(
 												<h3 className={styles.media_title}>
 													<a className={styles.media_link}>{node.title}</a>
 												</h3>
-												<p className={styles.media_summary}></p>
-
+												<p className={styles.media_summary}>{node.extraPostInfo.summary}</p>
+                                              
+												<h2 className={styles.module_title_mini}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>News</a>
+       						 </Link>
+							</h2>
 											</div>
 										</div>
 									</div>
@@ -112,8 +274,13 @@ const Index = ({allPosts, singlePost }) =>(
 												<h3 className={styles.media_title}>
 													<a className={styles.media_link}>{node.title}</a>
 												</h3>
-												<p className={styles.media_summary}></p>
-
+												<p className={styles.media_summary}>{node.extraPostInfo.summary}</p>
+                                                 
+												<h2 className={styles.module_title_mini}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>Sports</a>
+       						 </Link>
+							</h2>
 											</div>
 										</div>
 									</div>
@@ -141,10 +308,20 @@ export default Index;
 export async function getStaticProps(){
 	const allPosts = await getAllPosts();
 	const singlePost = await getSinglePost();
+	const politics = await getpolitics();
+	const financial = await getfinancial();
+	const sports = await getsports();
+	const latestNews = await getlatestNews();
+	const lifestyle = await getlifestyle()
 	return{
 		props: {
 			allPosts,
-			singlePost
+			singlePost,
+			politics,
+			financial,
+			sports,
+			latestNews,
+			lifestyle
 		}
 	};
 
