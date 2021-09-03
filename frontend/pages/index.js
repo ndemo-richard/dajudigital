@@ -17,13 +17,15 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 
 	<Layout>
 		<div className={styles.wrapper}>
-			<section className={styles.module_header}></section>
+			<section className={styles.module_header}>
+				
+			</section>
 			<section className={styles.module_promo}>
 				<div className={styles.module_column}>
 					<div className={styles.promo_module_content}>
 					<div className={styles.media_promo_list} >
 						<div className={styles.media_col1}>
-
+                          
 							{latestNews.news.map(({node }) =>(
 
                               <div className={styles.media_promo_headline} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
@@ -45,11 +47,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 												</h3>
 												<p className={styles.media_summary_promo}>{node.extraPostInfo.summary}</p>
                                                 
-												<h2 className={styles.module_title_promo}>
-							 <Link href="/">
-         						 <a className={styles.module_title_mini_link}>News</a>
-       						 </Link>
-							</h2>
+												
 											</div>
 
 											
@@ -57,12 +55,20 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 									</div>
 							  </div>
 							))}
+							<div className={styles.power_links_promo}>
+                            <h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>News</a>
+       						 </Link>
+							</h2>
+							</div>
 						
 						</div>
 						<div className={styles.media_col2}>
+							<div className={styles.media_promo_politics}>
 						{politics.politic.map(({node }) => (
 
-								<div className={styles.media_promo_politics} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+								<div className={styles.row1} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 									<div className={`${styles["media"]}${styles["block_link"]}`}>
 										<div className={styles.media_image_col2}>
 											<div className={styles.responsive_image}>
@@ -80,20 +86,27 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 													<a className={styles.media_link_promo}>{node.title}</a>
 												</h3>
 												 
-												<h2 className={styles.module_title_promo}>
-							 <Link href="/">
-         						 <a className={styles.module_title_mini_link}>Politics</a>
-       						 </Link>
-							</h2>
+												
 
 											</div>
 			
 									</div>
 								</div>
 						))}
+						<div className={styles.power_links}>
+						<h2 className={styles.module_title_promo}>
+							 <Link href="/pol">
+         						 <a className={styles.module_title_mini_link}>Politics</a>
+       						 </Link>
+							</h2>
+
+						</div>
+						</div>
+						
+						<div className={styles.media_promo_technology}>
 						{sports.sport.map(({node }) => (
 
-<div className={styles.media_promo_technology} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+<div className={styles.row1} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 	<div className={`${styles["media"]}${styles["block_link"]}`}>
 		<div className={styles.media_image_col2}>
 			<div className={styles.responsive_image}>
@@ -112,20 +125,27 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 													<a className={styles.media_link_promo}>{node.title}</a>
 												</h3>
 												 
-												<h2 className={styles.module_title_promo}>
-							 <Link href="/">
-         						 <a className={styles.module_title_mini_link}>Sports</a>
-       						 </Link>
-							</h2>
+												
 
 											</div>
 
 	</div>
 </div>
 ))}
+<div className={styles.power_links}>
+<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>Sports</a>
+       						 </Link>
+							</h2>
+
+</div>
+</div>
+
+<div className={styles.media_promo_business}>
 {financial.financials.map(({node }) => (
 
-<div className={styles.media_promo_business} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+<div className={styles.row1} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 	<div className={`${styles["media"]}${styles["block_link"]}`}>
 		<div className={styles.media_image_col2}>
 			<div className={styles.responsive_image}>
@@ -143,20 +163,28 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 													<a className={styles.media_link_promo}>{node.title}</a>
 												</h3>
 												 
-												<h2 className={styles.module_title_promo}>
-							 <Link href="/">
-         						 <a className={styles.module_title_mini_link}>technology</a>
-       						 </Link>
-							</h2>
+												
 
 											</div>
 
 	</div>
 </div>
 ))}
+<div className={styles.power_links}>
+<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>technology</a>
+       						 </Link>
+							</h2>
+
+</div>
+</div>
+
+
+	<div className={styles.media_promo_sports}>
 {lifestyle.life.map(({node }) => (
 
-<div className={styles.media_promo_sports} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
+<div className={styles.row1} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 	<div className={`${styles["media"]}${styles["block_link"]}`}>
 		<div className={styles.media_image_col2}>
 			<div className={styles.responsive_image}>
@@ -175,17 +203,23 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 												</h3>
 												
                                                 
-												<h2 className={styles.module_title_promo}>
-							 <Link href="/">
-         						 <a className={styles.module_title_mini_link}>News</a>
-       						 </Link>
-							</h2>
+												
 											</div>
 
 	</div>
 </div>
 ))}
+<div className={styles.power_links}>
+<h2 className={styles.module_title_promo}>
+							 <Link href="/">
+         						 <a className={styles.module_title_mini_link}>News</a>
+       						 </Link>
+							</h2>
+
+</div>
 					
+</div>
+
 						
 						</div>
 
@@ -210,8 +244,8 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 
 								{singlePost.edges.map(({node }) => (
 
-									<div className={styles.media_list_item} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
-										<div className={`${styles["media"]}${styles["block_link"]}`}>
+									<div className={styles.media_list_item} >
+										<div className={`${styles["media"]}${styles["block_link"]}`} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 											<div className={styles.media_image}>
 												<div className={styles.responsive_image}>
 												<Image
@@ -229,15 +263,20 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 												</h3>
 												<p className={styles.media_summary}>{node.extraPostInfo.summary}</p>
                                               
-												<h2 className={styles.module_title_mini}>
+												
+											</div>
+										</div>
+										<div className={styles.power_links_module}>
+										<h2 className={styles.module_title_mini}>
 							 <Link href="/">
          						 <a className={styles.module_title_mini_link}>News</a>
        						 </Link>
 							</h2>
-											</div>
+
 										</div>
 									</div>
 										))}
+										
 								</div>
 							
 
@@ -256,9 +295,10 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 								<div className={styles.media_list} >
 
 								{singlePost.edges.map(({node }) => (
-
-									<div className={styles.media_list_item} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
-										<div className={`${styles["media"]}${styles["block_link"]}`}>
+									
+                                    
+									<div className={styles.media_list_item} >
+										<div className={`${styles["media"]}${styles["block_link"]}`} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 											<div className={styles.media_image}>
 												<div className={styles.responsive_image}>
 												<Image
@@ -276,15 +316,23 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 												</h3>
 												<p className={styles.media_summary}>{node.extraPostInfo.summary}</p>
                                                  
-												<h2 className={styles.module_title_mini}>
+											
+											</div>
+										</div>
+										<div className={styles.power_links_module}>
+										<h2 className={styles.module_title_mini}>
 							 <Link href="/">
          						 <a className={styles.module_title_mini_link}>Sports</a>
        						 </Link>
 							</h2>
-											</div>
+
 										</div>
+									
 									</div>
+									
+									
 										))}
+										
 								</div>
 							
 

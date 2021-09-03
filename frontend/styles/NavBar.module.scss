@@ -32,8 +32,37 @@
 .logo{
 	position:relative;
 	display:block;
-	height:6rem;
-	width:6rem;
+	height:4em;
+	width:6em;
+  top:1em;
+  box-shadow: rgb(0, 0, 0) 10px 10px 15px;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-animation: swinging 3.5s ease-in-out forwards infinite;
+  animation: swinging 3.5s ease-in-out forwards infinite;
+}
+@-webkit-keyframes swinging{
+  0%{-webkit-transform: rotate(10deg);}
+  50%{-webkit-transform: rotate(-5deg)}
+  100%{-webkit-transform: rotate(10deg);}
+}
+
+@keyframes swinging{
+  0%{transform: rotate(10deg);}
+  50%{transform: rotate(-5deg)}
+  100%{transform: rotate(10deg);}
+}
+.hook{
+  width:1em;
+  height:1em;
+  position:absolute;
+  margin-top: 0.5%;
+  margin-left:2.5%;
+  border-radius: 100%;
+  box-shadow: rgb(0, 0, 0) 0px 5px 15px;
+  
+  
+  background-color:#fff;
 }
 @media(max-width:768px){
 .logo{

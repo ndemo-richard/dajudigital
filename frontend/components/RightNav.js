@@ -4,17 +4,23 @@ import styled from 'styled-components';
 const Ul = styled.ul`
   list-style: none;
   position:relative;
-  right:40%;
-  width:600px;
+  margin:auto;
+  width:60em;
   display: flex;
   flex-flow: row nowrap;
 
   li {
     padding: 0 15px;
     color:#fff;
-    font-size:1.1rem;
+    font-size:1em;
+    cursor:pointer;
+    font-family:Arial Bold;
+    border-right: 0.5px solid #7e5e60;
 
   }
+  li:last-child{
+    border: none;
+ }
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
@@ -39,10 +45,12 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
       <li><a href="/">Home</a></li>
+      <li><a href="news">News</a></li>
       <li><a href="/">Sports</a></li>
       <li><a href="/">Politics</a></li>
-      <li>Sign In</li>
-      <li>Sign Up</li>
+      <li><a href="/">Technology</a></li>
+      <li><a href="/">Entertainment</a></li>
+      <li><a href="/">Lifestyle</a></li>
     </Ul>
   )
 }

@@ -5,9 +5,9 @@ import Burger from './Burger';
 import styles from '../styles/NavBar.module.scss';
 const Nav = styled.nav`
   width: 100%;
-  height: 55px;
+  height: 2.5em;
   position:static;
-  background-color:#add8e6;
+  background-color:#212121;
   padding:0 20px;
   display: flex;
   justify-content: space-between;
@@ -15,8 +15,8 @@ const Nav = styled.nav`
     padding: 15px 0;
     color:#fff;
     margin-left:10rem;
-    width:4rem;
-    height:4rem;
+    width:2em;
+    height:2em;
   }
   @media (max-width:768px){
    .logo{
@@ -28,6 +28,7 @@ const Nav = styled.nav`
 const Navbar = () => {
   return (
     <Nav>
+      
       <div className={styles.logo}>
         <Image
 	  src="/images/logo.jpg"
@@ -35,6 +36,7 @@ const Navbar = () => {
           layout="fill"
 	  />
       </div>
+      <div className={styles.hook}></div>
       <Burger />
     </Nav>
   )
