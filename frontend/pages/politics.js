@@ -6,19 +6,19 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from "next/link";
 import Router from 'next/router';
-import styles from '../styles/news.module.scss';
+import styles from '../styles/politics.module.scss';
 //data
 import { getAllPosts } from '../lib/api';
 import { getSingleNews } from '../lib/api';
 import Layout from "../components/Layout";
 
 
-const News = ({allPosts, singleNews }) =>(
+const Politics = ({allPosts, singleNews }) =>(
 
 	<Layout>
 		<div className={styles.wrapper}>
 		<div className={styles.header}>
-				<h1 className={styles.header_title}>News</h1>
+				<h1 className={styles.header_title}>Politics</h1>
 
 			</div>
 		<div className={styles.container}>
@@ -80,7 +80,7 @@ const News = ({allPosts, singleNews }) =>(
 	</Layout>
 
 );
-export default News;
+export default Politics;
 
 export async function getStaticProps(){
 	const allPosts = await getAllPosts();

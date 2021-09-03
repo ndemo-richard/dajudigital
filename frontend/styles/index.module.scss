@@ -11,6 +11,46 @@
   
 
 }
+//start of logo and logo animation
+.logo{
+	position:absolute;
+	display:block;
+	height:4em;
+	width:6em;
+  top:-1.5rem;
+  left:-6rem;
+  box-shadow: rgb(0, 0, 0) 10px 10px 15px;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-animation: swinging 3.5s ease-in-out forwards infinite;
+  animation: swinging 3.5s ease-in-out forwards infinite;
+}
+@-webkit-keyframes swinging{
+  0%{-webkit-transform: rotate(10deg);}
+  50%{-webkit-transform: rotate(-5deg)}
+  100%{-webkit-transform: rotate(10deg);}
+}
+
+@keyframes swinging{
+  0%{transform: rotate(10deg);}
+  50%{transform: rotate(-5deg)}
+  100%{transform: rotate(10deg);}
+}
+.hook{
+  width:1em;
+  height:1em;
+  top:-2.4rem;
+  left:-5.5rem;
+  position:absolute;
+  margin-top: 0.5%;
+  margin-left:2.5%;
+  border-radius: 100%;
+  box-shadow: rgb(0, 0, 0) 0px 5px 15px;
+  
+  
+  background-color:#fff;
+}
+//end of logo animation
 .module_header{
   position: relative;
   width:84%;
@@ -73,7 +113,7 @@
 .responsive_image{
   width:100%;
   height:100%;
-  opacity: 0.85; 
+  opacity: 0.9; 
   
 }
 .responsive_image:hover{
@@ -117,7 +157,7 @@
   width: 100%;
   height: 11.7em;
   cursor: pointer;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 .row1:hover{
   opacity: 10;

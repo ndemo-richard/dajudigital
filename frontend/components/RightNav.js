@@ -46,8 +46,8 @@ const RightNav = ({ open }) => {
     <Ul open={open}>
       <li><a href="/">Home</a></li>
       <li><a href="news">News</a></li>
-      <li><a href="/">Sports</a></li>
-      <li><a href="/">Politics</a></li>
+      <li><a href="sports">Sports</a></li>
+      <li><a href="politics">Politics</a></li>
       <li><a href="/">Technology</a></li>
       <li><a href="/">Entertainment</a></li>
       <li><a href="/">Lifestyle</a></li>

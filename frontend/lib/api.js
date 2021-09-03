@@ -1,3 +1,8 @@
+/**
+ * to do list
+ * to refactor this api so that it cann fetch only once 
+ */
+
 const API_URL = process.env.WP_API_URL;
 
 async function fetchAPI(query, { variables } = {}) {
@@ -342,3 +347,44 @@ politic:	edges {
     return data?.posts;
   }
   
+  //module fetch posts
+  //hope to refactor this api
+  /**
+   * news module
+   */
+   //categoryName: "news"
+   export async function getSingleNews(preview) {
+    const data = await fetchAPI(
+      `
+      query singleNews {
+        posts(first : 1, where: { orderby: { field: DATE, order: DESC}}) {
+	singleNews: edges {
+      node {
+        id
+	date
+	title
+	slug
+        extraPostInfo {
+          videos {
+            mediaItemUrl
+          }
+          previewImage {
+            mediaItemUrl
+          }
+          summary
+        }
+        date
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+	}
+      }
+      `
+    );
+
+    return data?.posts;
+  }

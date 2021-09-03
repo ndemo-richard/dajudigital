@@ -29,14 +29,8 @@ const Navbar = () => {
   return (
     <Nav>
       
-      <div className={styles.logo}>
-        <Image
-	  src="/images/logo.jpg"
-	  alt="logo"
-          layout="fill"
-	  />
-      </div>
-      <div className={styles.hook}></div>
+      
+      
       <Burger />
     </Nav>
   )

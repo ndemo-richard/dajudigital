@@ -18,7 +18,15 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 	<Layout>
 		<div className={styles.wrapper}>
 			<section className={styles.module_header}>
-				
+				<div className={styles.logo}>
+						<Image
+					src="/images/logo.jpg"
+					alt="logo"
+						layout="fill"
+					/>
+					
+				</div>
+				<div className={styles.hook}></div>
 			</section>
 			<section className={styles.module_promo}>
 				<div className={styles.module_column}>
