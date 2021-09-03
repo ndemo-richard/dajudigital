@@ -268,7 +268,7 @@
   border-left-width: 0.225rem;
 
 }
-.module_title_promo{
+.module_title_promo_title{
   display: block;
   position: relative;
   font-size: 1rem;
@@ -370,8 +370,329 @@ background-color: transparent;
   z-index: 10;
   bottom:0;
 }
+/**
+*for smartphones
+*/
+
+  @media (max-width:767px){
+    .wrapper{
+      position: relative;
+      width:100%;
+      height:max-content;
+      display:block;
+      margin: auto;
+      padding-bottom: 4em;
+      align-content: center;
+      aspect-ratio: 1/1;
+    
+    }
+    .logo{display:none;}
+  
+    .module_header{
+      position: relative;
+      width:84%;
+      height: 1em;
+      margin: auto;
+      background-color:inherit;
+      
+    }
+    .module_promo{
+      position: relative;
+      width:94%;
+      height: 36em;
+      display: block;
+      margin:auto;
+    }
+    .promo_module_content{
+      position: relative;
+    
+    }
+    .media_promo_list{
+      position:relative;
+      width: 100%;
+      height: 24em;
+      display:block;
+      justify-content: space-between;
+      aspect-ratio: 1/1;
+     
+    }
+    .media_col1{
+     
+      position: relative;
+      width:100%;
+      height:14em;   
+    }
+    .media_col2{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 100%;
+      height:fit-content;
+      flex-direction:column;  
+    }
+    
+    .media_promo_headline{
+      cursor: pointer;
+      height:fit-content;    
+    }
+    .media_image_promo{
+      position: relative;
+      width:100%;
+      height: 14em;    
+    }
+    .media_image_col2{
+      display: none;
+      width: 100%;
+      height: 11.7em;
+    }
+    .responsive_image{ opacity:1; }
+
+    .media_content_promo{
+      background-color:transparent;
+      width: 100%;
+      height: fit-content;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 10;
+      padding-left:0.5em;
+      padding-right:0.5em;
+    }
+    .media_title_promo{
+      font-size: 1em;
+      color: antiquewhite;
+    }
+    .media_summary_promo{
+      display: none;
+      color: #c1c1c1;;
+    }
+    .media_content_col2{
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      top:0;
+      z-index: 10;
+      padding:0;
+    }
+    .media_title_col2{
+      font-size: 1em;
+      font-family: inherit;
+      color: #212121;
+    }
+    .row1{
+      position: relative;
+      width: 100%;
+      height:fit-content;
+      cursor: pointer;
+      opacity: 1;
+  
+    }
+   
+    
+    
+    .row1::after {
+      display: none; }
+    .media_promo_politics{
+      position: relative;
+      width: 100%;
+      height:6rem;
+      border-bottom: 1px solid #d3d3d3;
+     
+    }
+    .media_promo_business{
+      position: relative;
+      width: 100%;
+      height: 6rem;
+      border-bottom: 1px solid #d3d3d3;
+    
+    }
+    
+    .media_promo_sports{
+      position: relative;
+      width: 100%;
+      height: 6rem;
+      cursor: pointer;
+      border-bottom: 1px solid #d3d3d3;
+    }
+    
+    .media_promo_technology{
+      position: relative;
+      width: 100%;
+      height: 6rem;
+      cursor: pointer;
+      border-bottom: 1px solid #d3d3d3;
+     
+    }
+    
+    .module_content_block{
+      position: relative;
+      width: 94%;
+      height:fit-content;
+      margin: auto;
+      display: block;
+     
+    }
+    .module_column{
+      display: block;
+      position: relative;
+      width: 100%;
+      height:100%;
+      margin: auto;
+     
+    }
+    .content_module_block{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      height: auto;
+      
+    }
+    .module_news{
+      position: relative;
+      width:100%;
+      margin: 3.5rem auto;
+    }
+    .module_sports{
+      position: relative;
+      width:100%;
+      height: 18em;
+      margin: auto;
+    }
+    .module_title{
+      display: block;
+      position: relative;
+      font-size: 2rem;
+      font-family: Arial Bold;
+      font-weight: bold;
+      margin: auto auto 1rem;
+      color: #4a4a4a;
+      cursor: pointer;
+    }
+    .module_title_link{
+      position: relative;
+      margin:auto;
+      
+    }
+    .module_title_link::before{
+      content: " ";
+      display: inline-block;
+      margin-right: 0.5rem;
+      border-left: 2px solid #47a1d8;
+      padding: 0;
+      width: 0;
+      border-color: #e91802;
+      height: 1.4rem;
+      border-left-width: 0.225rem;
+    
+    }
+  
+    .module_title_promo{
+      display: block;
+      position: relative;
+      font-size: 1rem;
+      font-family: Arial,Helvetica,freesans,sans-serif;
+      font-weight:lighter;
+      margin: auto auto 1rem;
+      color: #4a4a4a;
+    }
+    .module_title_mini_link{
+      position: relative;
+      margin:auto;
+      
+    }
+    .module_title_mini_link::before{
+      content: " ";
+      display: inline-block;
+      margin-right: 0.5rem;
+      border-left: 2px solid #47a1d8;
+      padding: 0;
+      width: 0;
+      border-color: #e91802;
+      height: 0.85rem;
+      border-left-width: 0.225rem;
+    
+    }
+    .module_title_mini{
+      display: block;
+      position: relative;
+      font-size: 1rem;
+      font-family: Arial,Helvetica,freesans,sans-serif;
+      font-weight:lighter;
+      margin: auto auto 1rem;
+      color:#4a4a4a;
+    }
+    .module_content{
+      position: relative;
+      display: block;
+      width:100%;
+      height: 18em;
+    }
+    .media{
+      background-color:transparent;
+    }
+    .block_link{
+      background-color:transparent;
+    }
+    .media_list{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 18em;
+      margin: 0;
+      cursor: pointer;
+      background-color: red;
+      
+    }
+    .media_list_item{
+      position: relative;
+      border-bottom: 1px solid #d3d3d3;
+      width: 100%;
+      height: 6em;
+      
+    
+    }
+    .media_image{
+      display: none;
+    }
+    
+    .media_content{
+    background-color: transparent;
+    }
+    .media_title{
+      color:#212121;
+      font-size: 1em;
+    }
+    .media_summary{
+      display: none;
+    }
+    .media_link{
+      background-color:transparent;
+    }
+    
+    .power_links{
+      display: block;
+      position: absolute;
+      z-index: 10;
+       bottom:0;
+      left:0;
+    }
+    .power_links_promo{
+      display: block;
+      position: absolute;
+      z-index: 10;
+      bottom:0;
+      left:5%;
+    }
+    .power_links_module{
+      display: block;
+      position: absolute;
+      z-index: 10;
+      bottom:0;
+    }
 
 
-  @media (max-width:768px){
 
   }

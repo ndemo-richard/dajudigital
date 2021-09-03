@@ -64,7 +64,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 							  </div>
 							))}
 							<div className={styles.power_links_promo}>
-                            <h2 className={styles.module_title_promo}>
+                            <h2 className={styles.module_title_promo_title}>
 							 <Link href="/">
          						 <a className={styles.module_title_mini_link}>News</a>
        						 </Link>

@@ -11,17 +11,9 @@ const Nav = styled.nav`
   padding:0 20px;
   display: flex;
   justify-content: space-between;
-  .logo {
-    padding: 15px 0;
-    color:#fff;
-    margin-left:10rem;
-    width:2em;
-    height:2em;
-  }
-  @media (max-width:768px){
-   .logo{
-   margin:0;
-   }
+ 
+  @media (max-width:767px){
+  height:2em;
    }
 `
 
