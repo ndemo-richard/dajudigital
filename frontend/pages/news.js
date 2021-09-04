@@ -24,7 +24,7 @@ const News = ({allPosts, singleNews }) =>(
 		<div className={styles.container}>
 			
 			<div className={styles.main}>
-				{singleNews.singleNews.map(({ node } ) => (
+				{singleNews.singlenew.map(({ node } ) => (
 					<div className={styles.mainCard} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 						<div className={styles.mainCardContent}>
 							<h3 className={styles.mainCardContent_title}>

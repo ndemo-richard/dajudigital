@@ -357,7 +357,7 @@ politic:	edges {
     const data = await fetchAPI(
       `
       query singleNews {
-        posts(first : 1, where: { orderby: { field: DATE, order: DESC},,categoryName: "news"}) {
+        posts(first : 1, where: { orderby: { field: DATE, order: DESC},categoryName: "news"}) {
 	singlenew: edges {
       node {
         id
