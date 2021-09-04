@@ -168,7 +168,7 @@ export async function getlatestNews(preview) {
   const data = await fetchAPI(
     `
     query latestNews {
-      posts(first : 1, where: { orderby: { field: DATE, order: DESC},}) {
+      posts(first : 3, where: { orderby: { field: DATE, order: DESC},categoryName: "news"}) {
 news:	edges {
     node {
       id
@@ -310,13 +310,13 @@ politic:	edges {
     return data?.posts;
   }
   
-  //financial
-  export async function getfinancial(preview) {
+  //technology
+  export async function gettechnology(preview) {
     const data = await fetchAPI(
       `
-      query financial {
-        posts(first : 1, where: { orderby: { field: DATE, order: DESC},categoryName: "financial"}) {
-	financials: edges {
+      query technology {
+        posts(first : 1, where: { orderby: { field: DATE, order: DESC},categoryName: "technology"}) {
+	technologies: edges {
       node {
         id
 	date
@@ -357,8 +357,8 @@ politic:	edges {
     const data = await fetchAPI(
       `
       query singleNews {
-        posts(first : 1, where: { orderby: { field: DATE, order: DESC}}) {
-	singleNews: edges {
+        posts(first : 1, where: { orderby: { field: DATE, order: DESC},,categoryName: "news"}) {
+	singlenew: edges {
       node {
         id
 	date
@@ -388,3 +388,42 @@ politic:	edges {
 
     return data?.posts;
   }
+
+  //three sports
+  ///sports
+  export async function getthreesports(preview) {
+    const data = await fetchAPI(
+      `
+      query threesports {
+        posts(first : 3, where: { orderby: { field: DATE, order: DESC},categoryName: "sports"}) {
+	threesport:edges {
+      node {
+        id
+	date
+	title
+	slug
+        extraPostInfo {
+          videos {
+            mediaItemUrl
+          }
+          previewImage {
+            mediaItemUrl
+          }
+          summary
+        }
+        date
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+	}
+      }
+      `
+    );
+
+    return data?.posts;
+  }
+  

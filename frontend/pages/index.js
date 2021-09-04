@@ -8,12 +8,12 @@ import Link from "next/link";
 import Router from 'next/router';
 import styles from '../styles/index.module.scss';
 //data
-import { getAllPosts, getfinancial, getpolitics, getsports,getlatestNews,getlifestyle } from '../lib/api';
-import { getSinglePost } from '../lib/api';
+import { getAllPosts, gettechnology, getpolitics, getsports,getlatestNews,getlifestyle,getthreesports } from '../lib/api';
+import { getSingleNews } from '../lib/api';
 import Layout from "../components/Layout";
 
 
-const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifestyle}) =>(
+const Index = ({allPosts, singleNews ,technology,politics,sports,latestNews,lifestyle,threesports,}) =>(
 
 	<Layout>
 		<div className={styles.wrapper}>
@@ -34,7 +34,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 					<div className={styles.media_promo_list} >
 						<div className={styles.media_col1}>
                           
-							{latestNews.news.map(({node }) =>(
+							{singleNews.singlenew.map(({node }) =>(
 
                               <div className={styles.media_promo_headline} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
                                 <div className={`${styles["media"]}${styles["block_link"]}`}>
@@ -63,7 +63,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 									</div>
 							  </div>
 							))}
-							<div className={styles.power_links_promo}>
+							<div className={styles.power_links}>
                             <h2 className={styles.module_title_promo_title}>
 							 <Link href="/">
          						 <a className={styles.module_title_mini_link}>News</a>
@@ -102,7 +102,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 								</div>
 						))}
 						<div className={styles.power_links}>
-						<h2 className={styles.module_title_promo}>
+						<h2 className={styles.module_title_promo_title}>
 							 <Link href="/pol">
          						 <a className={styles.module_title_mini_link}>Politics</a>
        						 </Link>
@@ -141,7 +141,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 </div>
 ))}
 <div className={styles.power_links}>
-<h2 className={styles.module_title_promo}>
+<h2 className={styles.module_title_promo_title}>
 							 <Link href="/">
          						 <a className={styles.module_title_mini_link}>Sports</a>
        						 </Link>
@@ -151,7 +151,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 </div>
 
 <div className={styles.media_promo_business}>
-{financial.financials.map(({node }) => (
+{technology.technologies.map(({node }) => (
 
 <div className={styles.row1} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 	<div className={`${styles["media"]}${styles["block_link"]}`}>
@@ -179,7 +179,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 </div>
 ))}
 <div className={styles.power_links}>
-<h2 className={styles.module_title_promo}>
+<h2 className={styles.module_title_promo_title}>
 							 <Link href="/">
          						 <a className={styles.module_title_mini_link}>technology</a>
        						 </Link>
@@ -218,9 +218,9 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 </div>
 ))}
 <div className={styles.power_links}>
-<h2 className={styles.module_title_promo}>
+<h2 className={styles.module_title_promo_title}>
 							 <Link href="/">
-         						 <a className={styles.module_title_mini_link}>News</a>
+         						 <a className={styles.module_title_mini_link}>lifestyle</a>
        						 </Link>
 							</h2>
 
@@ -250,7 +250,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 	
 								<div className={styles.media_list} >
 
-								{singlePost.edges.map(({node }) => (
+								{latestNews.news.map(({node }) => (
 
 									<div className={styles.media_list_item} >
 										<div className={`${styles["media"]}${styles["block_link"]}`} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
@@ -302,7 +302,7 @@ const Index = ({allPosts, singlePost ,financial,politics,sports,latestNews,lifes
 	
 								<div className={styles.media_list} >
 
-								{singlePost.edges.map(({node }) => (
+								{threesports.threesport.map(({node }) => (
 									
                                     
 									<div className={styles.media_list_item} >
@@ -363,21 +363,23 @@ export default Index;
 
 export async function getStaticProps(){
 	const allPosts = await getAllPosts();
-	const singlePost = await getSinglePost();
+	const singleNews = await getSingleNews();
 	const politics = await getpolitics();
-	const financial = await getfinancial();
+	const technology = await gettechnology();
 	const sports = await getsports();
 	const latestNews = await getlatestNews();
 	const lifestyle = await getlifestyle()
+	const threesports = await getthreesports()
 	return{
 		props: {
 			allPosts,
-			singlePost,
+			singleNews,
 			politics,
-			financial,
+			technology,
 			sports,
 			latestNews,
-			lifestyle
+			lifestyle,
+			threesports
 		}
 	};
 
