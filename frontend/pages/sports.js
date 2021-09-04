@@ -9,11 +9,11 @@ import Router from 'next/router';
 import styles from '../styles/sports.module.scss';
 //data
 import { getAllPosts } from '../lib/api';
-import { getSingleNews } from '../lib/api';
+import { getsports } from '../lib/api';
 import Layout from "../components/Layout";
 
 
-const Sports = ({allPosts, singleNews }) =>(
+const Sports = ({allPosts, sports }) =>(
 
 	<Layout>
 		<div className={styles.wrapper}>
@@ -24,7 +24,7 @@ const Sports = ({allPosts, singleNews }) =>(
 		<div className={styles.container}>
 			
 			<div className={styles.main}>
-				{singleNews.singleNews.map(({ node } ) => (
+				{sports.sport.map(({ node } ) => (
 					<div className={styles.mainCard} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 						<div className={styles.mainCardContent}>
 							<h3 className={styles.mainCardContent_title}>
@@ -84,11 +84,11 @@ export default Sports;
 
 export async function getStaticProps(){
 	const allPosts = await getAllPosts();
-	const singleNews = await getSingleNews();
+	const sports = await getsports();
 	return{
 		props: {
 			allPosts,
-			singleNews
+			sports
 		}
 	};
 

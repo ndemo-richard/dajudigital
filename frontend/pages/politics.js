@@ -9,11 +9,11 @@ import Router from 'next/router';
 import styles from '../styles/politics.module.scss';
 //data
 import { getAllPosts } from '../lib/api';
-import { getSingleNews } from '../lib/api';
+import { getpolitics } from '../lib/api';
 import Layout from "../components/Layout";
 
 
-const Politics = ({allPosts, singleNews }) =>(
+const Politics = ({allPosts, politics }) =>(
 
 	<Layout>
 		<div className={styles.wrapper}>
@@ -24,7 +24,7 @@ const Politics = ({allPosts, singleNews }) =>(
 		<div className={styles.container}>
 			
 			<div className={styles.main}>
-				{singleNews.singleNews.map(({ node } ) => (
+				{politics.politic.map(({ node } ) => (
 					<div className={styles.mainCard} onClick={() => Router.push(`/article/${ node.slug }`)} key={node.id}>
 						<div className={styles.mainCardContent}>
 							<h3 className={styles.mainCardContent_title}>
@@ -84,11 +84,11 @@ export default Politics;
 
 export async function getStaticProps(){
 	const allPosts = await getAllPosts();
-	const singleNews = await getSingleNews();
+	const politics = await getpolitics();
 	return{
 		props: {
 			allPosts,
-			singleNews
+			politics
 		}
 	};
 
