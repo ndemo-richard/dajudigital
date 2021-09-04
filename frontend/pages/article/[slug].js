@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/lazy';
 import Image from 'next/image';
 import { getAllPostsWithSlug, getPost } from '../../lib/api';
 import styles from '../../styles/Blog.module.scss';
@@ -35,25 +35,16 @@ export default function Post({ postData }){
  <h2>Loading ..</h2>
  ) : (
  <article >
+	 <div className={styles.title}>
+ <h1>{postData.title}</h1>
+		 </div>
+ <p>posted on &nbsp; {formatDate(postData.date)}</p>
  <div >
 	 <div className={styles.Image}>
 	 <Image
 	 src={postData.extraPostInfo.previewImage.mediaItemUrl}
 	 alt="avater"
 	 layout="fill"
-	 />
-	 </div>
-	 <div className={styles.title}>
- <h1>{postData.title}</h1>
-		 </div>
- <p>posted on &nbsp; {formatDate(postData.date)}</p>
-
-	 <div className={styles.video}>
-	 <ReactPlayer
-	 width="100%"
-	 height="100%"
-	 url={postData.extraPostInfo.videos.mediaItemUrl}
-	 controls
 	 />
 	 </div>
 	 <div className={styles.content}
