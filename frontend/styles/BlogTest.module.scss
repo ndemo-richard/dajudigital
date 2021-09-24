@@ -7,3 +7,11 @@
 .hottopics {
   width: 80%;
 }
+@media (max-width: 768px) {
+  .trending {
+    width: 100%;
+  }
+  .hottopics {
+    width: 100%;
+  }
+}

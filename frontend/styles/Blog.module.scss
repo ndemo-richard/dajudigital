@@ -128,6 +128,16 @@
 }
 
 @media (max-width: 768px) {
+  .sidebar {
+    width: 80%;
+    margin: auto;
+  }
+  .carausel {
+    display: block;
+  }
+  .container {
+    display: block;
+  }
   .main {
     width: 80%;
   }
