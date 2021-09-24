@@ -109,58 +109,7 @@ export async function getSinglePost(preview) {
     return data?.posts;
   }
   
-  
-  export async function getAllPostsWithSlug() {
-    const data = await fetchAPI(
-      `
-      {
-        posts(first: 10000) {
-          edges {
-            node {
-              slug
-            }
-          }
-        }
-      }
-    `);
-    return data?.posts;
-  }
 
-  export async function getPost(slug) {
-    const data = await fetchAPI(
-      `
-      fragment PostFields on Post {
-        title
-        excerpt
-        slug
-        date
-        extraPostInfo {
-          videos {
-            mediaItemUrl
-          }
-          previewImage {
-            mediaItemUrl
-          }
-          summary
-          }
-      }
-      query PostBySlug($id: ID!, $idType: PostIdType!) {
-        post(id: $id, idType: $idType) {
-          ...PostFields
-          content
-        }
-      }
-    `,
-      {
-        variables: {
-          id: slug,
-          idType: 'SLUG'
-        }
-      }
-    );
-
-    return data;
-  }
 
   //customized queries for practice
 //Latest
@@ -426,4 +375,93 @@ politic:	edges {
 
     return data?.posts;
   }
+
+  //get slug
+
+  export async function getAllPostsWithSlug() {
+    const data = await fetchAPI(
+      `
+      {
+        posts(first: 10000) {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `);
+    return data?.posts;
+  }
+
+  export async function getPost(slug) {
+    const data = await fetchAPI(
+      `
+      fragment PostFields on Post {
+        title
+        excerpt
+        slug
+        date
+        extraPostInfo {
+          videos {
+            mediaItemUrl
+          }
+          previewImage {
+            mediaItemUrl
+          }
+          summary
+          }
+      }
+      query PostBySlug($id: ID!, $idType: PostIdType!) {
+        post(id: $id, idType: $idType) {
+          ...PostFields
+          content
+        }
+      }
+    `,
+      {
+        variables: {
+          id: slug,
+          idType: 'SLUG'
+        }
+      }
+    );
+
+    return data;
+  }
   
+  export async function getSideNews(preview) {
+    const data = await fetchAPI(
+      `
+      query sideNews {
+        posts(first : 3, where: { orderby: { field: DATE, order: DESC},categoryName: "sports"}) {
+	      edges {
+      node {
+        id
+	date
+	title
+	slug
+        extraPostInfo {
+          videos {
+            mediaItemUrl
+          }
+          previewImage {
+            mediaItemUrl
+          }
+          summary
+        }
+        date
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+	}
+      }
+      `
+    );
+
+    return data?.posts;
+  }

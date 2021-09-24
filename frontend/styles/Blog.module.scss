@@ -1,50 +1,53 @@
-
-
-.container{
-	background-color:#fff;
-	width:100%;
-	height:100%;
-	padding:0;
-	padding-top:3rem;
-	margin:0;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-
+.wrapper {
+  width: 100%;
+  display: block;
 }
-.main{
-	width:70%;
-	height:100;
-
-
+.container {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  padding-top: 3rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
-.Image{
-	position:relative;
-	width:600px;
-	height:340px;
-	margin:0;
-
+.main {
+  position: relative;
+  margin: auto;
+  width: 70%;
+  height: 100%;
 }
-.title{
-	width:600px;
-	height:100%;
+.Image {
+  position: relative;
+  width: 600px;
+  height: 340px;
+  margin: auto;
 }
-.video{
-	margin-top:4rem;
-	width:700px;
-	height:350px;
-
+.title {
+  width: 600px;
+  height: 100%;
+  margin: auto;
 }
-.content{
-	margin-top:4rem;
-	margin-bottom:4rem;
-	width:750px;
+.p {
+  width: 600px;
+  margin: auto;
+}
+.video {
+  margin: auto;
+  margin-top: 4rem;
+  width: 700px;
+  height: 350px;
+}
+.content {
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 750px;
 }
 
-
-.linkBack{
-	color:lightblue;
-
+.linkBack {
+  color: lightblue;
 }
 
 .listitem {
@@ -78,23 +81,68 @@
   height: auto;
 }
 
-@media (max-width:768px){
-        .main{
-		width:80%;
-	}
-	.Image{
-		width:100%;
-		height:260px;
-	}
-	.video{
-		width:100%;
-		heigth:240%;
-	}
-	.title{
-		width:80%;
-	}
-	.content{
-		width:100%;
-	}
+.sidebar {
+  position: relative;
+  width: 30%;
+  height: vh;
+}
+.carousel_wrapper {
+  display: block;
+  width: 80%;
+  height: fit-content;
+  margin: auto;
+  padding-bottom: 4rem;
+}
+.carousel_title {
+  font-size: 2rem;
+  font-family: Arial Bold;
+  font-weight: bold;
+  /*color: #4a4a4a;*/
+  color: #265781;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 18.5em;
+  height: 100%;
+}
+.resizableImg {
+  position: relative;
+  width: 100%;
+  height: 14rem;
+}
+.card_content {
+  position: relative;
+  width: 100%;
+}
+.card_content_title {
+  color: #4a4a4a;
+}
 
+@media (max-width: 768px) {
+  .main {
+    width: 80%;
+  }
+  .Image {
+    width: 100%;
+    height: 260px;
+  }
+  .video {
+    width: 100%;
+    height: 240%;
+  }
+  .title {
+    width: 80%;
+  }
+  .content {
+    width: 100%;
+  }
 }

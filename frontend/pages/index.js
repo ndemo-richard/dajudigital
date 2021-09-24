@@ -8,12 +8,12 @@ import Link from "next/link";
 import Router from 'next/router';
 import styles from '../styles/index.module.scss';
 //data
-import { getAllPosts, gettechnology, getpolitics, getsports,getlatestNews,getlifestyle,getthreesports } from '../lib/api';
+import { getAllPosts, gettechnology, getpolitics, getsports,getlatestNews,getlifestyle,getthreesports} from '../lib/api';
 import { getSingleNews } from '../lib/api';
 import Layout from "../components/Layout";
 
 
-const Index = ({allPosts, singleNews ,technology,politics,sports,latestNews,lifestyle,threesports,}) =>(
+const Index = ({allPosts, singleNews ,technology,politics,sports,latestNews,lifestyle,threesports}) =>(
 
 	<Layout>
 		<div className={styles.wrapper}>
@@ -353,7 +353,8 @@ const Index = ({allPosts, singleNews ,technology,politics,sports,latestNews,life
 				</div>
 
 			</section>
-			<section className={styles.module_edditors_choice}></section>
+			<section className={styles.module_edditors_choice}>
+			</section>
 		</div>
 	
 	</Layout>
