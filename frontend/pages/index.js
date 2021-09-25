@@ -1,6 +1,7 @@
-// pages/index.js
-//import ReactPlayer from 'react-player';
-//import fetch from "isomorphic-fetch";
+/**
+ * to do list
+ * create fist layout using mansory grid layout instead of individual items with flex
+ *  */;
 
 import Head from 'next/head';
 import Image from 'next/image';

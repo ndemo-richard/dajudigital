@@ -1,6 +1,6 @@
 // theme/_colors.scss
 
-$primary: #FFFFFF;
+$primary: #ffffff;
 $primary-light: #ffffff;
 $primary-dark: #cccccc;
 
@@ -9,7 +9,15 @@ $secondary-light: #546172;
 $secondary-dark: #011120;
 
 $on-primary: #000;
-$on-primary-light: #A1A1A1;
+$on-primary-light: #292f33;
 $on-secondary: #fff;
 
-$highlight: #FA4141;
+$highlight: #fa4141;
+
+$brand-primary-dark: #0c0032;
+$brand-primary: #484da9;
+$nav-background: #ffffff;
+$link-color: #888888;
+$link-color-alt: #fff;
+$link-hover: $brand-primary;
+$link-active: darken($link-color, 50%);

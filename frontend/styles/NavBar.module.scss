@@ -1,37 +1,114 @@
-// NavBar.scss
-
 @import "../theme/theme";
 
-.NavBar {
+.nav {
+  font-family: "Montserrat", sans-serif;
+  background: $nav-background;
+  border-bottom: 1px solid #ebebeb;
+  padding: 1em;
+
+  ul {
+    list-style-type: none;
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: transparent;
+
+    li {
+      text-align: center;
+      padding: 1em;
+      a {
+        text-decoration: none;
+        color: $link-color-alt;
+
+        &:hover {
+          color: $link-hover;
+        }
+      }
+      &.active {
+        a {
+          color: $link-active;
+        }
+      }
+    }
+  }
+}
+
+//hide checkbox input element
+.menu_toggle {
+  opacity: 0;
+}
+
+// Show menu when #menu-toggle checkbox is checked, use ~
+.menu_toggle:checked ~ .menu {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  background-color: $brand-primary-dark;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
 
-  height: 30px;
-  width: 100%;
-  padding: 5px 0;
-  margin-bottom: 30px;
-  margin-top:10px;//check will delete
-  background: black;
-
-  font-family: $core-font;
-  font-size: 16px;
-  color: $on-primary-light;
-
-  box-shadow: 0px -2px 15px rgba(50, 50, 50, 0.45);
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .active {
-    color: $highlight;
+.menu_icon {
+  position: relative;
+  float: right;
+  span {
+    display: block;
+    background: $brand-primary;
+    width: 24px;
+    height: 3px;
+    margin: 4px;
+    border-radius: 3px;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
   }
 }
 
-@media(max-width:768px){
-.NavBar{
-  height: 1rem;
-}
+@media only screen and (min-width: 48em) {
+  .nav {
+    font-family: Arial Bold;
+    width: 100%;
+    height: 2.5em;
+    position: static;
+    background-color: #212121;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      list-style: none;
+      position: relative;
+      margin: auto;
+      width: 60em;
+      display: flex;
+      flex-flow: row nowrap;
+      li {
+        padding: 0 15px;
+        color: #fff;
+        font-size: 1em;
+        cursor: pointer;
+        font-family: Arial Bold;
+        border-right: 0.5px solid #7e5e60;
+        a {
+          color: $link-color-alt;
+        }
+      }
+      li:last-child {
+        border: none;
+      }
+    }
+  }
+
+  //checkbox toggle will hide when breakpoint is beyond mobile
+  .menu_toggle,
+  .mobile_menu_label {
+    display: none;
+  }
+
+  .mobile_menu_label {
+    padding: 1.5em 1em;
+  }
+  .menu {
+    display: none;
+    background: transparent;
+  }
 }
