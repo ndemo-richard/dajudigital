@@ -11,6 +11,10 @@ This website is build with:
 <li>wordpress</li>
 <ul>
 
+<h2>Screenshot</h2>
+
+![Getting Started](./1.png)
+
 <h2>Licence</h2>
 
 Distributed under the MIT Licence
