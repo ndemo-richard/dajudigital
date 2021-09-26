@@ -121,6 +121,7 @@
   opacity: 1;
 }
 .responsive_image:hover {
+  filter: blur(1px) brightness(0.5);
   transform: scale(1.005);
   z-index: 9;
 }
@@ -163,9 +164,6 @@
   height: 11.7em;
   cursor: pointer;
   opacity: 1;
-}
-.row1:hover {
-  transform: scale(1.005) rotate(0.5deg);
 }
 
 .row1::after {
@@ -439,6 +437,10 @@
   }
   .responsive_image {
     opacity: 1;
+  }
+  .responsive_image:hover {
+    filter: blur(1px) brightness(0.5);
+    transform: scale(1.005) rotate(0.5deg);
   }
 
   .media_content_promo {

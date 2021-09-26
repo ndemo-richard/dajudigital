@@ -129,7 +129,10 @@
 .card_content_title {
   color: #4a4a4a;
 }
-
+.postedDate {
+  width: 30%;
+  margin: auto;
+}
 @media (max-width: 768px) {
   .sidebar {
     width: 80%;
@@ -140,6 +143,9 @@
   }
   .container {
     display: block;
+  }
+  .postedDate {
+    width: 100%;
   }
   .main {
     width: 95%;
