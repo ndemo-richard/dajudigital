@@ -50,7 +50,10 @@ import sa from '../../img/sa.png'
 	 <div className={styles.title}>
  <h1>{postData.title}</h1>
 		 </div>
- <p className={styles.p}>posted on &nbsp; {formatDate(postData.date)}</p>
+									 <div  className={styles.postedDate}>
+										  <p>posted on &nbsp; {formatDate(postData.date)}</p>
+									</div>
+ 
  <div >
 	 <div className={styles.Image}>
 	 <Image
@@ -67,13 +70,15 @@ import sa from '../../img/sa.png'
  </article>
  )}
 </main>
-</div>
+				 </div>
+				 
 		 <div className={styles.sidebar}>
 	 
-	 <Sidebar/>
+					  <Sidebar/>
 
- </div>
-		 </div>
+				 </div>
+			 </div>
+			 
 	 <div className={styles.carousel_wrapper}>
 	 <hr></hr>
 						 <h2 className={styles.carousel_title}>Incase you missed it</h2>
@@ -132,8 +137,8 @@ import sa from '../../img/sa.png'
 							 </div>
 							 </div>
 
-		 </div>
-		 </div>
+			 </div>
+			 </div>
 	 </Layout>
 );
 }
